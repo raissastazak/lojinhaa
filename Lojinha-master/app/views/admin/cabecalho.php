@@ -74,7 +74,7 @@
             <img src="../../../assets/imagens/avatar.gif" alt="" class="img-fluid rounded-circle" style="padding: 15px;">
             <ul>
                 <li><a href="">Produtos</a></li>
-                <li><a href="">Cadastrar Produto</a></li>
+                <li><a href="cadastro-produto.php">Cadastrar Produto</a></li>
             </ul>
         </div>
 

@@ -27,7 +27,7 @@
     <title>Lojão do IFC</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../assets/css/ifc-style.css" rel="stylesheet">
 
 </head>
