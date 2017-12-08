@@ -14,7 +14,7 @@ class CrudProdutos {
     }
 
     public function salvar(Produto $produto){
-        $sql = "INSERT INTO tb_produtos (nome, preco, categoria, estoque) VALUES ('$produto->nome, $produto->preco', '$produto->categoria', '$produto->estoque')";
+        $sql = "INSERT INTO tb_produtos (nome, preco, categoria, estoque) VALUES ('$produto->nome', '$produto->preco', '$produto->categoria', '$produto->estoque')";
 
         $this->conexao->exec($sql);
     }
@@ -40,18 +40,29 @@ class CrudProdutos {
         return $listaProdutos;
 
     }
+      public function buscarProduto(int $id){
+        $consulta = $this->conexao->query("SELECT * FROM tb_produtos WHERE id = $id");
+        $produto = $consulta->fetch(PDO::FETCH_ASSOC);
+
+        return $produto;
+
+    }
 
     public function excluir(int $id){
 
         $this->conexao->exec("DELETE FROM tb_produtos WHERE id = $id");
 
+    }
+
+    public function editar($id, $nome, $preco, $categoria, $estoque){
+
+        $this->conexao->exec("UPDATE `tb_produtos` SET `estoque` = '$estoque', `nome` = '$nome', `categoria` = '$categoria', `preco` = '$preco' WHERE `tb_produtos`.`id` = $id");
 
     }
 
-    public function editar(int $id){
-
-        $this->conexao->exec(" tb_produtos WHERE id = $id");
-
-
+    public  function comprar($id,$qtd,$estoque){
+        
+        $this->conexao->exec("UPDATE tb_produtos set estoque = ($estoque-$qtd) WHERE id = $id");
     }
 }
+

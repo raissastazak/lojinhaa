@@ -13,18 +13,18 @@ body {
 }
 
 .bg-dark {
-  background-color: #3179FF !important;
+  background-color: grey !important;
 }
 
 .btn-ifc {
   color: #fff;
-  background-color: #00a77e;
+  background-color: black;
   border-color: transparent;
   border: transparent 0px;
 }
 .btn-ifc:hover {
   color: #fff;
-  background-color: #079673;
+  background-color: black;
 }
 
 .footer {
@@ -33,3 +33,27 @@ body {
   bottom: 0;
 }
 
+.admin-menu {
+  background: black;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  padding: 0 ;
+  list-style: none;
+}
+
+ul li a {
+  display: block;
+  padding: 10px 10px;
+  color: #b8c7ce;
+  font-size: 12px;
+}
+ul li a:hover {
+  text-decoration: none;
+  background: #1d1c1c;
+  color: #b8c7ce;
+}

@@ -1,22 +1,24 @@
 ﻿<?php
 
-require_once __DIR__."/../../models/CrudProdutos.php";
-$crud = new CrudProdutos();
+    require_once __DIR__."/../../models/CrudProdutos.php";
+    $crud = new CrudProdutos();
 
-$listaProdutos = $crud->getProdutos();
+    $listaProdutos = $crud->getProdutos();
 
-require_once 'cabecalho.php';
+    require_once 'cabecalho.php';
+
 ?>
-
 <!--Barra de busca-->
-<div class="row">
-    <div class="col-md-12">
+
+<div class="col-md-12">
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="digite o nome do produto" aria-describedby="basic-addon2">
-            <button class="input-group-addon" id="basic-addon2">buscar</button>
+
+
+                <input type="text" name="nome_buscado" class="form-control" placeholder="Digite o nome do produto" aria-describedby="basic-addon2">
+                <button type="submit" class="input-group-addon" id="basic-addon2">Buscar</button>
+
         </div>
     </div>
-</div>
 <br>
 
 <table class="table table-bordered">

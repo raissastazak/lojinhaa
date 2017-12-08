@@ -4,7 +4,7 @@
 class Conexao {
 
     const HOST      = "localhost";
-    const NOMEBANCO = "bd_loja_2info3";
+    const NOMEBANCO = "bd_loga_2info3";
     const USUARIO   = "root";
     const SENHA     = "root";
     
@@ -16,7 +16,12 @@ class Conexao {
         
         try{
             if(self::$conexao == null){
-                self::$conexao = new PDO("mysql:host=".self::HOST.";dbname=".self::NOMEBANCO, self::USUARIO, self::SENHA);
+                $dbHost=self::HOST;
+                $dbName=self::NOMEBANCO;
+                $dbUser=self::USUARIO;
+                $dbPass=self::SENHA;
+
+                self::$conexao = new PDO("mysql:host=$dbHost;dbname=$dbName;charset=utf8", $dbUser, $dbPass, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
                 self::$conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             }
             

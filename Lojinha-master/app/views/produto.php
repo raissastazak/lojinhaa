@@ -9,9 +9,6 @@
 
     $produto = $crud->getProduto($codigo);
 
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +34,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#"><img src="../../assets/imagens/logo.png" alt="" width="80px"></a>
+        <a class="navbar-brand" href="#"><img src="../../assets/imagens/jr.png" alt="" width="80px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -75,8 +72,8 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <span class="badge badge-primary">mostre a categoria</span>
-                    <span class="badge badge-warning">mostre a disponibilidade</span>
+                    <span class="badge badge-primary"><?=$produto->categoria?></span>
+                    <span class="badge badge-warning"><?=$produto->estaDisponivel()?></span>
                 </div>
             </div>
             <!-- end row -->
@@ -91,17 +88,32 @@
 
             <div class="row">
                 <div class="col-md-12 bottom-rule">
-                    <h2 class="product-price">mostre preco</h2>
+                    <h2 class="product-price">R$<?=$produto->preco?></h2>
                 </div>
             </div>
             <!-- end row -->
 
             <div class="row add-to-cart">
                 <div class="col-md-5 product-qty">
-                    <input class="btn btn-default btn-lg btn-qty" value="1" />
-                    <button class="btn btn-lg btn-brand btn-full-width">
-                        comprar
-                    </button>
+                    <form action="../controllers/controladorProduto.php?acao=comprar" method="post">
+                        <div class="form-group">
+                            <input value="<?= $produto->id?>" name="id" type="hidden" class="form-control" id="id" aria-describedby="id produto" placeholder="">
+
+                            <input value="<?= $produto->estoque?>" name="estoque" type="hidden" class="form-control" id="id" aria-describedby="quantidade estoque" placeholder="">
+
+                        </div>
+
+                        <?php 
+
+                        if ($produto->estoque > 0){
+
+                            echo "<input name='quantidade' class='btn btn-default btn-lg btn-qty' value='1' />";
+
+                            echo "<button type='submit' class='btn btn-primary'>Comprar</button>";
+
+                        } ?>
+
+                    </form>
                 </div>
             </div><!-- end row -->
 

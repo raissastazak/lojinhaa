@@ -1,3 +1,12 @@
+<?php
+
+    require_once "app/models/CrudProdutos.php";
+    $crud = new CrudProdutos();
+
+    $listaProdutos = $crud->getProdutos();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +20,7 @@
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/ifc-style.css">
 
-    <title>Loja do Lukinhas</title>
+    <title>Loja da Raissinha</title>
 
 </head>
 
@@ -20,7 +29,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#"><img src="assets/imagens/bacon.png" alt="" width="120px"></a>
+        <a class="navbar-brand" href="#"><img src="assets/imagens/jr.png" alt="" width="120px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,7 +52,7 @@
 <!-- Jumbotron Header -->
 <header class="jumbotron my-4 home-banner">
     <div class="container">
-        <h1 class="display-3">Loja do Lukinhas!</h1>
+        <h1 class="display-3">JR Moletons</h1>
         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
         <a href="#" class="btn btn-primary btn-lg">só hoje!</a>
     </div>
@@ -57,7 +66,7 @@
 
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card">
-                    <img class="card-img-top" src="http://placehold.it/500x325" alt="">
+                    <img class="card-img-top" src="assets/imagens/moleton.jpg" alt="">
                     <div class="card-body">
                         <h4 class="card-title">Título</h4>
                         <p class="card-text">00.00</p>

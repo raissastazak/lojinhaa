@@ -2,10 +2,6 @@
 <?php
 require_once "cabecalho.php";
 
-
-
-
-
 ?>
 <!-- Use o controladorProduto.php para encaminhar os dados do seu cadastro -->
 
@@ -17,21 +13,21 @@ require_once "cabecalho.php";
     </div>
 
     <div class="form-group">
-        <label for="preco">Preco</label>
+        <label for="preco">Preço</label>
         <input name="preco" type="number" step="0.01" class="form-control" id="preco" placeholder="">
     </div>
 
     <div class="form-group">
         <label for="quantidade">Quantidade</label>
-        <input name="quantidade" type="number" class="form-control" id="quantidade" placeholder="">
+        <input name="estoque" type="number" class="form-control" id="quantidade" placeholder="">
     </div>
 
     <div class="form-group">
         <label for="Categoria">Categoria</label>
         <select name="categoria" class="form-control" id="Categoria">
-            <option>Fruta</option>
-            <option>Legume</option>
-            <option>Hortaliça</option>
+            <option value="Canguru Aberto">Canguru Aberto</option>
+            <option value="Canguru Fechado">Canguru Fechado</option>
+            <option value="Careca">Careca</option>
         </select>
     </div>
 
